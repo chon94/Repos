@@ -20,19 +20,25 @@ public class RockPaperScissors {
         Random randomNumGenerated = new Random();
         Scanner myScanner = new Scanner(System.in);
         int rounds;
-
+         
+        
+        rounds = 0;
+        while(rounds >= 1 || rounds <= 10){  //TRYING TO LOOP round of games of what the user inputted.
+        
         rounds = getNumOfRounds();
+        rounds--;
+        
         gameMenu();
         String userChoice = getUserChoice();
         String computerChoice = getComputerChoice(randomNumGenerated);
-
-        /* while(rounds < 1 || rounds > 10){  //TRYING TO LOOP round of games of what the user inputted.
-            System.out.println(rounds);
-            getNumOfRounds();
-        }*/
+       
+       
         System.out.println("\nYou chose " + userChoice + "\nComputer chose " + computerChoice);
         chooseWinner(computerChoice, userChoice);
-        System.out.println(rounds);
+        
+        
+      }
+       
     }
 
     public static String getComputerChoice(Random random) {
@@ -53,11 +59,17 @@ public class RockPaperScissors {
 
     public static String getUserChoice() {
         String userChoice;
+        String personPlay;
 
         Scanner myScanner = new Scanner(System.in);
         System.out.println("\nUser make your move! ");
 
         userChoice = myScanner.nextLine();
+        /*if(userChoice == "rock" || userChoice == "paper" || userChoice == "scissor"){
+            personPlay = userChoice;
+        }else{
+            System.out.println("Invalid Input");
+        }*/
         return userChoice;
     }
 
@@ -115,7 +127,6 @@ public class RockPaperScissors {
             winner = "User";
             countUserWins++;
         }
-
         System.out.println("\n" + winner + " won the round.");
         return winner;
     }
