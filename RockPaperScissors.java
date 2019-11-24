@@ -20,25 +20,26 @@ public class RockPaperScissors {
         Random randomNumGenerated = new Random();
         Scanner myScanner = new Scanner(System.in);
         int rounds;
-         
-        
+
         rounds = 0;
-        while(rounds >= 1 || rounds <= 10){  //TRYING TO LOOP round of games of what the user inputted.
-        
-        rounds = getNumOfRounds();
-        rounds--;
-        
-        gameMenu();
-        String userChoice = getUserChoice();
-        String computerChoice = getComputerChoice(randomNumGenerated);
-       
-       
-        System.out.println("\nYou chose " + userChoice + "\nComputer chose " + computerChoice);
-        chooseWinner(computerChoice, userChoice);
-        
-        
-      }
-       
+
+        while (rounds > 1 || rounds < 10) {
+
+            rounds = getNumOfRounds();
+
+            for (int i = 0; i < rounds; i++) {
+
+            }
+
+            gameMenu();
+            String userChoice = getUserChoice();
+            String computerChoice = getComputerChoice(randomNumGenerated);
+
+            System.out.println("\nYou chose " + userChoice + "\nComputer chose " + computerChoice);
+            chooseWinner(computerChoice, userChoice);
+
+        }
+
     }
 
     public static String getComputerChoice(Random random) {
@@ -65,11 +66,7 @@ public class RockPaperScissors {
         System.out.println("\nUser make your move! ");
 
         userChoice = myScanner.nextLine();
-        /*if(userChoice == "rock" || userChoice == "paper" || userChoice == "scissor"){
-            personPlay = userChoice;
-        }else{
-            System.out.println("Invalid Input");
-        }*/
+
         return userChoice;
     }
 
@@ -132,160 +129,3 @@ public class RockPaperScissors {
     }
 
 }
-       
-   
-          
-
-
-
-           
-            
-        
-    
-
-
-   /* public static int keepScore(int score){
-        
-        int tie;
-        int userScore;
-        int computerScore;
-        // if user choose rock and comp chooses paper. Computer wins.
-        if(userChoice.equal "rock" && computerChoice.equal "scissor"){
-        userScore++;
-        }else if{userChoice.equal "paper" && computerChoice.equal "rock"){
-        userScore++;
-        }else(userChoice = "scissor" && computerChoice = "paper")
-        userScore++;
-        }else
-            computerScore++;
-                    
-        if(userChoice.equal "rock" && computerChoice.equal "rock"){
-        tie++;
-        }else if(userChoice.equal "paper" && computerChoice.equal "paper"){
-        tie++;
-        }else if(userChoice.equal "scissor" && computerChoice.equal "scissor"){
-        tie++;
-        }*/
-    
-
-
-    
-        
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        /*Scanner myScanner = new Scanner(System.in);
-        
-        int maxTurn, minTurn;
-        maxTurn = 10;
-        minTurn = 1;
-        
-        System.out.println("How many rounds do you want to play ranging from 1-10?");
-        int numberRounds = myScanner.nextInt(); 
-      
-        if(numberRounds < 1 || numberRounds > 10){
-            System.out.println("Invalid Round");
-            return;
-        } 
-            System.out.println("You will be playing " + numberRounds + " rounds of Rock, Paper, Scissor.");
-           
-        //variables    
-        String rock, paper, scissor;
-        int win, loss, draw, rounds;
-       
-        //User Inputs
-       System.out.println("Enter in: rock, paper or scissor: ");
-        
-       //user
-        boolean invalidMove = false;
-        
-        while (invalidMove == false); {       
-            
-            
-         int user = 0;
-         String userChoose = "";
-            
-         if(user == 1){
-             userChoose = "rock";
-         } else if(user == 2){
-             userChoose = "paper";
-         } else if(user == 3){
-             userChoose = "scissor";
-         } else{
-             userChoose = "";
-             invalidMove = true;
-         }
-         
-            System.out.println(userChoose);
-             
-        } 
-         
-             
-        
-            
-        
-        //computer
-        
-        
-        
-    }
-}
-
-
-
-/* while (userChoice.equals("rock")) { 
-       
-            
-        if(userChoice == "rock"){
-            System.out.println("You choose " + userChoice);
-        } else {
-            System.out.println("ERROR. Try entering rock, paper or scissor");
-        }   
-            /*if(userChoice == "paper"){
-            System.out.println("You choose " + userChoice);
-        } else if (userChoice == "scissor"){
-            System.out.println("You choose " + userChoice);
-        } else {
-            System.out.println("ERROR. Try entering rock, paper or scissor");
-        }
-        return userChoice;*/
-      
-        
-   
-        
-    
-   /* public static int getNumOfRounds(){
-        Scanner myScanner = new Scanner(System.in);
-        
-        int maxTurn, minTurn;
-        maxTurn = 10;
-        minTurn = 1;
-        
-        System.out.println("How many rounds do you want to play ranging from 1-10?");
-        int numberRounds = myScanner.nextInt(); 
-      
-        if(numberRounds < 1 || numberRounds > 10){
-            System.out.println("Invalid Round");
-            return;
-            
-        } 
-           System.out.println("You will be playing " + numberRounds + " rounds of Rock, Paper, Scissor."); 
-    } return;*/
