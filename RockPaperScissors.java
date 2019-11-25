@@ -19,11 +19,12 @@ public class RockPaperScissors {
     public static void main(String[] args) {
         Random randomNumGenerated = new Random();
         Scanner myScanner = new Scanner(System.in);
+        
         int rounds;
 
         rounds = 0;
 
-       do {
+        while (rounds > 1 || rounds < 10){
 
             rounds = getNumOfRounds();
 
@@ -36,7 +37,7 @@ public class RockPaperScissors {
             System.out.println("\nYou chose " + userChoice + "\nComputer chose " + computerChoice);
             chooseWinner(computerChoice, userChoice);
 
-        } while (rounds > 1 || rounds < 10);
+        } 
 
     }
 
@@ -97,7 +98,7 @@ public class RockPaperScissors {
         String winner = "No winner";
         int countUserWins = 0;
         int countComputerWins = 0;
-        int countTie;
+        int countTie = 0;
         int countRounds;
 
         if (computerChoice.equals("rock") && userChoice.equalsIgnoreCase("scissors")) {
@@ -120,8 +121,17 @@ public class RockPaperScissors {
         } else if (userChoice.equalsIgnoreCase("scissor") && computerChoice.equals("paper")) {
             winner = "User";
             countUserWins++;
-        }
-        System.out.println("\n" + winner + " won the round.");
+        } else
+            System.out.println("\n" + winner + " won the round.");
+            countTie++;
+        
+            System.out.println("\nThe final score is user: " + countUserWins + " and computer: " +countComputerWins);
+            if(countUserWins > countComputerWins){
+                System.out.println("User is the winner!");
+            } else if (countComputerWins > countUserWins){
+                System.out.println("Computer is the winner!");
+            } else
+                System.out.println("Tie!");
         return winner;
     }
 
