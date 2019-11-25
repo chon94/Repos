@@ -23,10 +23,14 @@ public class RockPaperScissors {
         int rounds;
         int roundCount = 0;
         String playAgain= "";
-        rounds = getNumOfRounds();
+       
+        
+            System.out.println("\nRock, Paper, Scissor!");
+            System.out.println("---------------------");
+            System.out.println("---------------------");
         
         while (roundCount > 1 || roundCount < 10){
-            
+            rounds = getNumOfRounds();
             roundCount++;
 
             gameMenu();
@@ -36,8 +40,7 @@ public class RockPaperScissors {
             System.out.println("\nYou chose " + userChoice + "\nComputer chose " + computerChoice);
             chooseWinner(computerChoice, userChoice);
             
-            System.out.println("Would you like to play again? [y/n]");
-            playAgain = myScanner.nextLine();
+            System.out.println("\nWould you like to play again? [y/n]");
             playAgain = myScanner.nextLine();
         } while (playAgain.equals('y'));
         
@@ -128,14 +131,14 @@ public class RockPaperScissors {
             System.out.println("\n" + winner + " won the round.");
             countTie++;
         
-            System.out.println("\nThe final score is user: " + countUserWins + " and computer: " +countComputerWins);
+            System.out.println("\nThe final score is user: " + countUserWins + " computer: " + countComputerWins + " and tie: " + countTie);
             if(countUserWins > countComputerWins){
                 System.out.println("User is the winner!");
             } else if (countComputerWins > countUserWins){
                 System.out.println("Computer is the winner!");
             } else
-                System.out.println("Tie!");
-        return winner;
+                System.out.println("It's a TIE!");
+                return winner;
     }
 
 }
