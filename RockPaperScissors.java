@@ -21,14 +21,13 @@ public class RockPaperScissors {
         Scanner myScanner = new Scanner(System.in);
         
         int rounds;
-
-        rounds = 0;
-
-        while (rounds > 1 || rounds < 10){
-
-            rounds = getNumOfRounds();
-
-            rounds++;
+        int roundCount = 0;
+        String playAgain= "";
+        rounds = getNumOfRounds();
+        
+        while (roundCount > 1 || roundCount < 10){
+            
+            roundCount++;
 
             gameMenu();
             String userChoice = getUserChoice();
@@ -36,9 +35,13 @@ public class RockPaperScissors {
 
             System.out.println("\nYou chose " + userChoice + "\nComputer chose " + computerChoice);
             chooseWinner(computerChoice, userChoice);
-
-        } 
-
+            
+            System.out.println("Would you like to play again? [y/n]");
+            playAgain = myScanner.nextLine();
+            playAgain = myScanner.nextLine();
+        } while (playAgain.equals('y'));
+        
+            System.out.println("Thanks for playing!");
     }
 
     public static String getComputerChoice(Random random) {
